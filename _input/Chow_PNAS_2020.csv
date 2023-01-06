@@ -1,0 +1,6 @@
+﻿description,value
+checkpoint_file,~/Documents/BFX_proj/expression_score_calculator/_output/checkpoint.csv
+counts_file,~/Documents/BFX_proj/_data_public/Chow_PNAS_2020/Chow_PNAS_normcounts.csv
+counts_type,DESeq2 normalized
+metadata_file,~/Documents/BFX_proj/_data_public/Chow_PNAS_2020/Chow_PNAS_meta_med.csv
+output_folder,~/Documents/BFX_proj/expression_score_calculator/_output/Chow_PNAS_2020/
