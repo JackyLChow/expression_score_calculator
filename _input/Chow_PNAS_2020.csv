@@ -1,6 +1,10 @@
 ﻿description,value
 checkpoint_file,~/Documents/BFX_proj/expression_score_calculator/_output/checkpoint.csv
-counts_file,~/Documents/BFX_proj/_data_public/Chow_PNAS_2020/Chow_PNAS_normcounts.csv
+counts_file,~/Documents/BFX_proj/_data_public/Chow_PNAS_2020/Chow_PNAS_lognormcounts.rds
 counts_type,DESeq2 normalized
-metadata_file,~/Documents/BFX_proj/_data_public/Chow_PNAS_2020/Chow_PNAS_meta_med.csv
+metadata_file,~/Documents/BFX_proj/_data_public/Chow_PNAS_2020/Chow_PNAS_meta_med.rds
+metadata_comparison_column,treatment
+signatures_file,~/Documents/BFX_proj/_data_public/signatures/test_signatures.csv
+signature_name_columns,Signature
+signature_genes_column,Genes
 output_folder,~/Documents/BFX_proj/expression_score_calculator/_output/Chow_PNAS_2020/

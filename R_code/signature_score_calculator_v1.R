@@ -23,10 +23,9 @@ if("checkpoint.csv" %in% list.files(parameters["output_folder", "value"])){
 }
 
 ###---quantile normalization----------------------------------------------------
-input_counts <- data.frame(read.csv(parameters["counts_file", "value"])) # load counts table
-counts <- as.matrix(input_counts[, 2:ncol(input_counts)]) # reformat to matrix
+input_counts <- readRDS(parameters["counts_file", "value"]) # load normalized and transformed counts
 quant_counts <- log2(normalize.quantiles(counts) + 1) # normalize; quantile normalization should be robust to counts type
-row.names(quant_counts) <- input_counts$gene
+row.names(quant_counts) <- rownames(input_counts)
 colnames(quant_counts) <- colnames(counts)
 
 metadata <- data.frame(read.csv(parameters["metadata_file", "value"], row.names = 1))
@@ -57,25 +56,6 @@ for(i in rownames(scores)){
   sample_scores <- rbind(sample_scores, sample_score_)
 }
 
-###---scores heatmap------------------------------------------------------------
+saveRDS(sample_scores, paste0(parameters["output_folder", "value"], "signature_scores.rds"))
 
-score_annotation <- data.frame(row.names = unique(unlist(str_split(scores$Genes, "\\, |\\,|; |\\;"))))
-
-for(i in unique(scores[, parameters["signature_name_column", "value"]])){
-  score_annotation[, i] <- ifelse(rownames(score_annotation) %in%
-                                             unlist(str_split(scores[i, parameters["signature_genes_column", "value"]], "\\, |\\,|; |\\;")),
-                                  1, 0)
-}
-
-sample_annotation
-
-
-
-
-
-score_plot <- metadata
-score_plot[, "score"] <- sample_score_
-
-ggplot(score_plot, aes(treatment, score)) +
-  geom_boxplot()
 

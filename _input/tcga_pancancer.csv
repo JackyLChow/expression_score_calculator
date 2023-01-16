@@ -1,0 +1,10 @@
+﻿description,value
+checkpoint_file,~/Documents/BFX_proj/expression_score_calculator/_output/checkpoint.csv
+counts_file,~/Documents/BFX_proj/_data_public/TCGA_PanCancer/_processed/tcga_pancancer_rsem_log_tf_FZ01.rds
+counts_type,DESeq2 normalized
+metadata_file,~/Documents/BFX_proj/_data_public/TCGA_PanCancer/_processed/tcga_pancancer_metadata_FZ01.rds
+metadata_comparison_column,CANCER_TYPE_ACRONYM
+signatures_file,~/Documents/BFX_proj/_data_public/signatures/test_signatures.csv
+signature_name_columns,Signature
+signature_genes_column,Genes
+output_folder,~/Documents/BFX_proj/expression_score_calculator/_output/tcga_pancancer/
